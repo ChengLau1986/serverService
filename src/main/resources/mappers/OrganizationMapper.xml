@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lzapi.dao.OrganizationMapper" >
+  <resultMap id="BaseResultMap" type="com.lzapi.pojo.Organization" >
+    <constructor >
+      <idArg column="organizationid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="tid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="orgstyle" jdbcType="SMALLINT" javaType="java.lang.Short" />
+      <arg column="orgname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="orgcode" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="parentid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="orgtypeid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="orgaddress" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="orgphone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="orgfax" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="mainleader" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="orgmark" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    organizationid, tid, orgstyle, orgname, orgcode, parentid, orgtypeid, orgaddress, 
+    orgphone, orgfax, mainleader, orgmark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from ti_organization
+    where organizationid = #{organizationid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from ti_organization
+    where organizationid = #{organizationid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lzapi.pojo.Organization" >
+    insert into ti_organization (organizationid, tid, orgstyle, 
+      orgname, orgcode, parentid, 
+      orgtypeid, orgaddress, orgphone, 
+      orgfax, mainleader, orgmark
+      )
+    values (#{organizationid,jdbcType=VARCHAR}, #{tid,jdbcType=INTEGER}, #{orgstyle,jdbcType=SMALLINT}, 
+      #{orgname,jdbcType=VARCHAR}, #{orgcode,jdbcType=VARCHAR}, #{parentid,jdbcType=VARCHAR}, 
+      #{orgtypeid,jdbcType=VARCHAR}, #{orgaddress,jdbcType=VARCHAR}, #{orgphone,jdbcType=VARCHAR}, 
+      #{orgfax,jdbcType=VARCHAR}, #{mainleader,jdbcType=VARCHAR}, #{orgmark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lzapi.pojo.Organization" >
+    insert into ti_organization
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="organizationid != null" >
+        organizationid,
+      </if>
+      <if test="tid != null" >
+        tid,
+      </if>
+      <if test="orgstyle != null" >
+        orgstyle,
+      </if>
+      <if test="orgname != null" >
+        orgname,
+      </if>
+      <if test="orgcode != null" >
+        orgcode,
+      </if>
+      <if test="parentid != null" >
+        parentid,
+      </if>
+      <if test="orgtypeid != null" >
+        orgtypeid,
+      </if>
+      <if test="orgaddress != null" >
+        orgaddress,
+      </if>
+      <if test="orgphone != null" >
+        orgphone,
+      </if>
+      <if test="orgfax != null" >
+        orgfax,
+      </if>
+      <if test="mainleader != null" >
+        mainleader,
+      </if>
+      <if test="orgmark != null" >
+        orgmark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="tid != null" >
+        #{tid,jdbcType=INTEGER},
+      </if>
+      <if test="orgstyle != null" >
+        #{orgstyle,jdbcType=SMALLINT},
+      </if>
+      <if test="orgname != null" >
+        #{orgname,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null" >
+        #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null" >
+        #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgtypeid != null" >
+        #{orgtypeid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgaddress != null" >
+        #{orgaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="orgphone != null" >
+        #{orgphone,jdbcType=VARCHAR},
+      </if>
+      <if test="orgfax != null" >
+        #{orgfax,jdbcType=VARCHAR},
+      </if>
+      <if test="mainleader != null" >
+        #{mainleader,jdbcType=VARCHAR},
+      </if>
+      <if test="orgmark != null" >
+        #{orgmark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lzapi.pojo.Organization" >
+    update ti_organization
+    <set >
+      <if test="tid != null" >
+        tid = #{tid,jdbcType=INTEGER},
+      </if>
+      <if test="orgstyle != null" >
+        orgstyle = #{orgstyle,jdbcType=SMALLINT},
+      </if>
+      <if test="orgname != null" >
+        orgname = #{orgname,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null" >
+        orgcode = #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null" >
+        parentid = #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgtypeid != null" >
+        orgtypeid = #{orgtypeid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgaddress != null" >
+        orgaddress = #{orgaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="orgphone != null" >
+        orgphone = #{orgphone,jdbcType=VARCHAR},
+      </if>
+      <if test="orgfax != null" >
+        orgfax = #{orgfax,jdbcType=VARCHAR},
+      </if>
+      <if test="mainleader != null" >
+        mainleader = #{mainleader,jdbcType=VARCHAR},
+      </if>
+      <if test="orgmark != null" >
+        orgmark = #{orgmark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where organizationid = #{organizationid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lzapi.pojo.Organization" >
+    update ti_organization
+    set tid = #{tid,jdbcType=INTEGER},
+      orgstyle = #{orgstyle,jdbcType=SMALLINT},
+      orgname = #{orgname,jdbcType=VARCHAR},
+      orgcode = #{orgcode,jdbcType=VARCHAR},
+      parentid = #{parentid,jdbcType=VARCHAR},
+      orgtypeid = #{orgtypeid,jdbcType=VARCHAR},
+      orgaddress = #{orgaddress,jdbcType=VARCHAR},
+      orgphone = #{orgphone,jdbcType=VARCHAR},
+      orgfax = #{orgfax,jdbcType=VARCHAR},
+      mainleader = #{mainleader,jdbcType=VARCHAR},
+      orgmark = #{orgmark,jdbcType=VARCHAR}
+    where organizationid = #{organizationid,jdbcType=VARCHAR}
+  </update>
+</mapper>
