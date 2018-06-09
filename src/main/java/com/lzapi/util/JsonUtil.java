@@ -100,28 +100,28 @@ public class JsonUtil {
 
 
     public static void main(String[] args) {
-        User u1 = new User();
-        u1.setUserid("1");
-        u1.setUsername("zhuyuanliucheng@163.com");
-        User u2 = new User();
-        u2.setUserid("2");
-        u2.setUsername("zhuyuanliucheng2@163.com");
-
-        String user1Json = JsonUtil.obj2String(u1);
-        String user1JsonPretty = JsonUtil.obj2StringPretty(u1);
-        System.out.println(user1Json);
-        System.out.println(user1JsonPretty);
-
-        User user = JsonUtil.string2Obj(user1Json,User.class);
-
-        List<User> userList = Lists.newArrayList();
-        userList.add(u1);
-        userList.add(u2);
-        String userListStr = JsonUtil.obj2StringPretty(userList);
-        System.out.println(userListStr);
-
-        List<User> userList2 = JsonUtil.string2Obj(userListStr, new TypeReference<List<User>>(){});
-        List<User> userList3 = JsonUtil.string2Obj(userListStr, List.class,User.class);
+//        User u1 = new User();
+//        u1.setUserid("1");
+//        u1.setUsername("zhuyuanliucheng@163.com");
+//        User u2 = new User();
+//        u2.setUserid("2");
+//        u2.setUsername("zhuyuanliucheng2@163.com");
+//
+//        String user1Json = JsonUtil.obj2String(u1);
+//        String user1JsonPretty = JsonUtil.obj2StringPretty(u1);
+//        System.out.println(user1Json);
+//        System.out.println(user1JsonPretty);
+//
+//        User user = JsonUtil.string2Obj(user1Json,User.class);
+//
+//        List<User> userList = Lists.newArrayList();
+//        userList.add(u1);
+//        userList.add(u2);
+//        String userListStr = JsonUtil.obj2StringPretty(userList);
+//        System.out.println(userListStr);
+//
+//        List<User> userList2 = JsonUtil.string2Obj(userListStr, new TypeReference<List<User>>(){});
+//        List<User> userList3 = JsonUtil.string2Obj(userListStr, List.class,User.class);
 
     }
 

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lzapi.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.lzapi.pojo.User" >
+    <constructor >
+      <idArg column="userid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="tid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="account" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="username" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="userpwd" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="organizationid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="lawnumber" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="idnumber" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="logindeviceid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="postid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="userphoto" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="departmentid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="deletemark" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    userid, tid, account, username, userpwd, organizationid, lawnumber, idnumber, logindeviceid, 
+    postid, userphoto, departmentid, deletemark
+  </sql>
+  <select id="checkUser" resultType="map" parameterType="java.lang.String">
+    select a.UserID,a.OrganizationID,a.PostID,b.OrgName,a.UserName,c.OrgTypeLevel from ti_User a
+    left join ti_Organization b on a.OrganizationID=b.OrganizationID
+    LEFT JOIN td_OrgType c on b.OrgTypeID =c.OrgTypeID
+    WHERE Account=#{account} and UserPwd=#{pwd} and DeleteMark=0
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from ti_user
+    where userid = #{userid,jdbcType=VARCHAR}
+  </select>
+  <select id="Login" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from ti_user
+    where account = #{account,jdbcType=VARCHAR} and userpwd = #{pwd,jdbcType=VARCHAR}
+  </select>
+  <select id="getPassword" resultType="java.lang.String">
+    SELECT password  FROM ti_user WHERE account = #{account,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from ti_user
+    where userid = #{userid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lzapi.pojo.User" >
+    insert into ti_user (userid, tid, account, 
+      username, userpwd, organizationid, 
+      lawnumber, idnumber, logindeviceid, 
+      postid, userphoto, departmentid, 
+      deletemark)
+    values (#{userid,jdbcType=VARCHAR}, #{tid,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, 
+      #{username,jdbcType=VARCHAR}, #{userpwd,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{lawnumber,jdbcType=VARCHAR}, #{idnumber,jdbcType=VARCHAR}, #{logindeviceid,jdbcType=VARCHAR}, 
+      #{postid,jdbcType=VARCHAR}, #{userphoto,jdbcType=VARCHAR}, #{departmentid,jdbcType=VARCHAR}, 
+      #{deletemark,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lzapi.pojo.User" >
+    insert into ti_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="tid != null" >
+        tid,
+      </if>
+      <if test="account != null" >
+        account,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="userpwd != null" >
+        userpwd,
+      </if>
+      <if test="organizationid != null" >
+        organizationid,
+      </if>
+      <if test="lawnumber != null" >
+        lawnumber,
+      </if>
+      <if test="idnumber != null" >
+        idnumber,
+      </if>
+      <if test="logindeviceid != null" >
+        logindeviceid,
+      </if>
+      <if test="postid != null" >
+        postid,
+      </if>
+      <if test="userphoto != null" >
+        userphoto,
+      </if>
+      <if test="departmentid != null" >
+        departmentid,
+      </if>
+      <if test="deletemark != null" >
+        deletemark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="tid != null" >
+        #{tid,jdbcType=INTEGER},
+      </if>
+      <if test="account != null" >
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null" >
+        #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="lawnumber != null" >
+        #{lawnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="idnumber != null" >
+        #{idnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="logindeviceid != null" >
+        #{logindeviceid,jdbcType=VARCHAR},
+      </if>
+      <if test="postid != null" >
+        #{postid,jdbcType=VARCHAR},
+      </if>
+      <if test="userphoto != null" >
+        #{userphoto,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentid != null" >
+        #{departmentid,jdbcType=VARCHAR},
+      </if>
+      <if test="deletemark != null" >
+        #{deletemark,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lzapi.pojo.User" >
+    update ti_user
+    <set >
+      <if test="tid != null" >
+        tid = #{tid,jdbcType=INTEGER},
+      </if>
+      <if test="account != null" >
+        account = #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null" >
+        userpwd = #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        organizationid = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="lawnumber != null" >
+        lawnumber = #{lawnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="idnumber != null" >
+        idnumber = #{idnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="logindeviceid != null" >
+        logindeviceid = #{logindeviceid,jdbcType=VARCHAR},
+      </if>
+      <if test="postid != null" >
+        postid = #{postid,jdbcType=VARCHAR},
+      </if>
+      <if test="userphoto != null" >
+        userphoto = #{userphoto,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentid != null" >
+        departmentid = #{departmentid,jdbcType=VARCHAR},
+      </if>
+      <if test="deletemark != null" >
+        deletemark = #{deletemark,jdbcType=INTEGER},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lzapi.pojo.User" >
+    update ti_user
+    set tid = #{tid,jdbcType=INTEGER},
+      account = #{account,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      userpwd = #{userpwd,jdbcType=VARCHAR},
+      organizationid = #{organizationid,jdbcType=VARCHAR},
+      lawnumber = #{lawnumber,jdbcType=VARCHAR},
+      idnumber = #{idnumber,jdbcType=VARCHAR},
+      logindeviceid = #{logindeviceid,jdbcType=VARCHAR},
+      postid = #{postid,jdbcType=VARCHAR},
+      userphoto = #{userphoto,jdbcType=VARCHAR},
+      departmentid = #{departmentid,jdbcType=VARCHAR},
+      deletemark = #{deletemark,jdbcType=INTEGER}
+    where userid = #{userid,jdbcType=VARCHAR}
+  </update>
+</mapper>

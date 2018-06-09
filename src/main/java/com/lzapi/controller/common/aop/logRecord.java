@@ -29,7 +29,6 @@ public class logRecord {
 //        LogDesc logDesc = ms.getMethod().getAnnotation(LogDesc.class);
 //        String mark = logDesc.businessLogic() + logDesc.actionType();
 //
-//        ResultMsg<?> resultMsg = (ResultMsg<?>)result;
 //        User user = (User) resultMsg.getResult();
         log.info("测试拦截");
     }

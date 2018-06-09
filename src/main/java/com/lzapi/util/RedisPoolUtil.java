@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.ShardedJedis;
 
+import java.util.Set;
+
 /**
  * Created by geely
  */
@@ -94,16 +96,35 @@ public class RedisPoolUtil {
         return result;
     }
 
-    public static void main(String[] args) {
-        Jedis jedis = RedisPool.getJedis();
-        RedisPoolUtil.set("keyTest","value");
-        String value = RedisPoolUtil.get("keyTest");
-        RedisPoolUtil.setEx("keyex","valueex",60*10);
-        RedisPoolUtil.expire("keyTest",60*20);
-        RedisPoolUtil.del("keyTest");
-        String aaa = RedisPoolUtil.get(null);
-        System.out.println(aaa);
-        System.out.println("end");
+    public static byte[] set(byte[] key, byte[] value) {
+        try (Jedis jedis = RedisPool.getJedis()) {
+            jedis.set(key, value);
+            return value;
+        }
+    }
+
+    public static void expire(byte[] key, int i) {
+        try (Jedis jedis = RedisPool.getJedis()) {
+            jedis.expire(key, i);
+        }
+    }
+
+    public static byte[] get(byte[] key) {
+        try (Jedis jedis = RedisPool.getJedis()) {
+            return jedis.get(key);
+        }
+    }
+
+    public static void del(byte[] key) {
+        try (Jedis jedis = RedisPool.getJedis()) {
+            jedis.del(key);
+        }
+    }
+
+    public static Set<byte[]> keys(String shiro_session_prefix) {
+        try (Jedis jedis = RedisPool.getJedis()) {
+            return jedis.keys((shiro_session_prefix + "*").getBytes());
+        }
     }
 
 

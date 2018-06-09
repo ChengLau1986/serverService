@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lzapi.dao.PermissionDao" >
+
+    <!--<resultMap id="permissionMap" type="com.lzapi.pojo.User">-->
+        <!--<id column="id" property="userId"/>-->
+        <!--<result column="nickname" property="nickname"/>-->
+        <!--<result column="role_id" property="roleId"/>-->
+        <!--<collection  property="roles" ofType="com.lzapi.pojo.Role">-->
+            <!--<result column="role_name" property="roleName"/>-->
+        <!--</collection>-->
+    <!--</resultMap>-->
+
+
+    <!--<select id="getUserPermission" resultMap="permissionMap">-->
+        <!--SELECT-->
+        <!--u.id,-->
+        <!--u.nickname,-->
+        <!--u.role_id,-->
+        <!--r.role_name-->
+        <!--FROM sys_user u-->
+        <!--LEFT JOIN sys_role r ON r.id = u.role_id-->
+        <!--WHERE u.username = #{username}-->
+        <!--AND u.delete_status='1'-->
+    <!--</select>-->
+
+    <resultMap id="permissionMap" type="com.lzapi.pojo.User">
+        <id column="id" property="userId"/>
+        <result column="nickname" property="nickname"/>
+        <collection  property="roles" ofType="com.lzapi.pojo.Role">
+            <id column="role_id" property="roleId"/>
+            <result column="role_name" property="roleName"/>
+            <collection  property="permissions" ofType="com.lzapi.pojo.Permission">
+                <id column="permission_id" property="permissionId"/>
+                <result column="menu_code" property="menuCode"/>
+                <result column="permission_code" property="permissionCode"/>
+            </collection>
+        </collection>
+    </resultMap>
+
+
+    <select id="getUserPermission" resultMap="permissionMap">
+        SELECT
+        u.id,
+        u.nickname,
+        ur.role_id role_id,
+        r.role_name,
+        p.id permission_id,
+        p.menu_code,
+        p.permission_code
+        FROM sys_user u
+        LEFT JOIN sys_user_role ur ON u.id=ur.user_id
+        LEFT JOIN sys_role r ON r.id = ur.role_id
+        LEFT JOIN sys_role_permission rp ON r.id = rp.role_id
+        LEFT JOIN sys_permission p ON rp.permission_id = p.id
+        WHERE u.username = #{username}
+        AND u.delete_status='1'
+    </select>
+</mapper>

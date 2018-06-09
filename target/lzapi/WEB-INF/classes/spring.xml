@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx.xsd
+      http://www.springframework.org/schema/aop
+      http://www.springframework.org/schema/aop/spring-aop.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context.xsd
+      http://www.springframework.org/schema/task
+      http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <import resource="datasource.xml"/>
+    <import resource="spring-shiro.xml"/>
+
+    <!--annotation-config注解支持-->
+    <!--spring扫描controller之外的注解类，包括service和dao等-->
+    <context:component-scan base-package="com.lzapi" annotation-config="true">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--面向切面编程支持，采用Cglib代理-->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+
+
+    <!--异步消息-->
+    <!-- 任务调度器 -->
+    <!--<task:scheduler id="scheduler" pool-size="10"/>-->
+    <!-- 任务执行器 -->
+    <!--<task:executor id="executor" pool-size="10"/>-->
+    <!--开启注解调度支持 @Async @Scheduled-->
+    <!--<task:annotation-driven  executor="executor" scheduler="scheduler" proxy-target-class="true"/>-->
+
+    <!--<task:annotation-driven/>-->
+    <!--<task:executor id="executor" keep-alive="1000" pool-size="20" queue-capacity="20" rejection-policy="ABORT"/>-->
+
+</beans>

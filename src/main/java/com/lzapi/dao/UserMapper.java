@@ -21,4 +21,6 @@ public interface UserMapper {
     Map<String,Object> checkUser(@Param("account") String account, @Param("pwd") String pwd);
 
     User Login(@Param("account") String account, @Param("pwd") String pwd);
+
+    String getPassword(@Param("account") String account);
 }

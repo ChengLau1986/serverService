@@ -41,6 +41,9 @@
     from ti_user
     where account = #{account,jdbcType=VARCHAR} and userpwd = #{pwd,jdbcType=VARCHAR}
   </select>
+  <select id="getPassword" resultType="java.lang.String">
+    SELECT password  FROM ti_user WHERE account = #{account,jdbcType=VARCHAR}
+  </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from ti_user

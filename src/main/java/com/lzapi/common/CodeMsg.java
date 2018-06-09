@@ -7,7 +7,8 @@ public enum CodeMsg {
     SUCCESS(1,"SUCCESS"),
     ERROR(0,"ERROR"),
     LOGIN_ERROR(100,"用户名或密码错误"),
-    LOGIN_GQ(101,"用户未登录,无法获取当前用户的信息");
+    LOGIN_NONE(101,"用户未登录或登录过期,无法获取当前用户的信息");
+
 
     private int code;
     private String msg;

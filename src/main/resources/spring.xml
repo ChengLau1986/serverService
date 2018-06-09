@@ -17,6 +17,9 @@
       http://www.springframework.org/schema/task
       http://www.springframework.org/schema/task/spring-task.xsd">
 
+    <import resource="datasource.xml"/>
+    <import resource="spring-shiro.xml"/>
+
     <!--annotation-config注解支持-->
     <!--spring扫描controller之外的注解类，包括service和dao等-->
     <context:component-scan base-package="com.lzapi" annotation-config="true">
@@ -25,10 +28,8 @@
 
     <!--面向切面编程支持，采用Cglib代理-->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
-    <import resource="datasource.xml"/>
 
-    <!-- 开启@AspectJ AOP代理 -->
-    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
 
     <!--异步消息-->
     <!-- 任务调度器 -->

@@ -138,12 +138,7 @@ public class RedisShardedPoolUtil {
         RedisPoolUtil.expire("keyTest",60*20);
 
         RedisPoolUtil.del("keyTest");
-
-
-        String aaa = RedisPoolUtil.get(null);
-        System.out.println(aaa);
-
-        System.out.println("end");
+        
 
 
     }

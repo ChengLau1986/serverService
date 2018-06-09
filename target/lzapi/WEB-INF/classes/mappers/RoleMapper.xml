@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lzapi.dao.RoleMapper" >
+    <resultMap id="BaseResultMap" type="com.lzapi.pojo.Role" >
+        <constructor >
+            <idArg column="row_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+            <arg column="role_name" jdbcType="INTEGER" javaType="java.lang.Integer" />
+        </constructor>
+    </resultMap>
+    <select id="getRoles" resultType="java.lang.String">
+        SELECT b.role_name
+        FROM ti_user a INNER JOIN user_roles b
+        on a.row_id = b.row_id
+        WHERE a.account=#{account,jdbcType=VARCHAR}
+    </select>
+</mapper>
