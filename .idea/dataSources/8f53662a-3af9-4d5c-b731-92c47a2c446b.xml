@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - example@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.9">
+    <root id="1"/>
+    <schema id="2" parent="1" name="example">
+      <Visible>1</Visible>
+    </schema>
+    <table id="3" parent="2" name="article">
+      <Comment>发布号作者表</Comment>
+    </table>
+    <table id="4" parent="2" name="sys_permission">
+      <Comment>后台权限表</Comment>
+    </table>
+    <table id="5" parent="2" name="sys_role">
+      <Comment>后台角色表</Comment>
+    </table>
+    <table id="6" parent="2" name="sys_role_permission">
+      <Comment>角色-权限关联表</Comment>
+    </table>
+    <table id="7" parent="2" name="sys_user">
+      <Comment>运营后台用户表</Comment>
+    </table>
+    <table id="8" parent="2" name="sys_user_role"/>
+    <table id="9" parent="2" name="sys_shiro_filter"/>
+    <column id="10" parent="3" name="id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="11" parent="3" name="content">
+      <Comment>文章内容</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="12" parent="3" name="create_time">
+      <Comment>创建时间</Comment>
+      <DataType>timestamp|0s</DataType>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="13" parent="3" name="update_time">
+      <Comment>更新时间</Comment>
+      <DataType>timestamp|0s</DataType>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="14" parent="3" name="delete_status">
+      <Comment>是否有效  1.有效  2无效</Comment>
+      <DataType>varchar(1)|0s</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="15" parent="3" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="16" parent="4" name="id">
+      <Comment>自定id,主要供前端展示权限列表分类排序使用.</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="17" parent="4" name="menu_code">
+      <Comment>归属菜单,前端判断并展示菜单使用,</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="18" parent="4" name="menu_name">
+      <Comment>菜单的中文释义</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="19" parent="4" name="permission_code">
+      <Comment>权限的代码/通配符,对应代码中@RequiresPermissions 的value</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="20" parent="4" name="permission_name">
+      <Comment>本权限的中文释义</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="21" parent="4" name="required_permission">
+      <Comment>是否本菜单必选权限, 1.必选 2非必选 通常是&quot;列表&quot;权限是必选</Comment>
+      <DataType>tinyint(1)|0s</DataType>
+      <DefaultExpression>&apos;2&apos;</DefaultExpression>
+    </column>
+    <column id="22" parent="4" name="url">
+      <Comment>后台服务访问路径</Comment>
+      <DataType>varchar(50)|0s</DataType>
+    </column>
+    <key id="23" parent="4" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="5" name="id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="5" name="role_name">
+      <Comment>角色名</Comment>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <column id="26" parent="5" name="create_time">
+      <DataType>timestamp|0s</DataType>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="27" parent="5" name="update_time">
+      <DataType>timestamp|0s</DataType>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="28" parent="5" name="delete_status">
+      <Comment>是否有效  1有效  2无效</Comment>
+      <DataType>varchar(1)|0s</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="29" parent="5" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="6" name="id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="6" name="role_id">
+      <Comment>角色id</Comment>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="32" parent="6" name="permission_id">
+      <Comment>权限id</Comment>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="33" parent="6" name="create_time">
+      <DataType>timestamp|0s</DataType>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="34" parent="6" name="update_time">
+      <DataType>timestamp|0s</DataType>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="35" parent="6" name="delete_status">
+      <Comment>是否有效 1有效     2无效</Comment>
+      <DataType>varchar(1)|0s</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="36" parent="6" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="37" parent="7" name="id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="7" name="username">
+      <Comment>用户名</Comment>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="39" parent="7" name="password">
+      <Comment>密码</Comment>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="40" parent="7" name="nickname">
+      <Comment>昵称</Comment>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="41" parent="7" name="role_id">
+      <Comment>角色ID</Comment>
+      <DataType>int(11)|0s</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="42" parent="7" name="create_time">
+      <Comment>创建时间</Comment>
+      <DataType>timestamp|0s</DataType>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="43" parent="7" name="update_time">
+      <Comment>修改时间</Comment>
+      <DataType>timestamp|0s</DataType>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="44" parent="7" name="delete_status">
+      <Comment>是否有效  1有效  2无效</Comment>
+      <DataType>varchar(1)|0s</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="45" parent="7" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="8" name="id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="8" name="user_id">
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="48" parent="8" name="role_id">
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <key id="49" parent="8" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="9" name="id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="9" name="name">
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="52" parent="9" name="perms">
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="53" parent="9" name="sort_order">
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <key id="54" parent="9" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

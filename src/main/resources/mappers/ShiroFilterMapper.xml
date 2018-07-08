@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lzapi.dao.ShiroFilterDao" >
+    <resultMap id="BaseResultMap" type="com.lzapi.pojo.ShiroFilter" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="perms" property="perms" jdbcType="VARCHAR" />
+        <result column="sort_order" property="sortOrder" jdbcType="INTEGER" />
+    </resultMap>
+    <select id="getShiroFilter" resultMap="BaseResultMap">
+        SELECT
+        *
+        FROM sys_shiro_filter
+    </select>
+</mapper>
