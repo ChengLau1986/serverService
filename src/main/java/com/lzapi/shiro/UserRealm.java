@@ -1,10 +1,14 @@
 package com.lzapi.shiro;
 
+import com.lzapi.common.Const;
 import com.lzapi.pojo.Permission;
 import com.lzapi.pojo.Role;
+import com.lzapi.pojo.ShiroFilter;
 import com.lzapi.pojo.User;
 import com.lzapi.service.LoginService;
 import com.lzapi.service.PermissionService;
+import com.lzapi.util.JsonUtil;
+import com.lzapi.util.RedisPoolUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -12,9 +16,11 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.SerializationUtils;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -80,6 +86,11 @@ public class UserRealm extends AuthorizingRealm {
                 //ByteSource.Util.bytes("salt"), salt=username+salt,采用明文访问时，不需要此句
                 getName()
         );
+
+        Subject currentUser = SecurityUtils.getSubject();
+        user.setPassword("");
+        RedisPoolUtil.set(Const.USER_INFO+currentUser.getSession().getId(), JsonUtil.obj2String(user));
+
         //session中不需要保存密码
 //        user.remove("password");
 //        //将用户信息放入session中

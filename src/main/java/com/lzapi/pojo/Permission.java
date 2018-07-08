@@ -19,5 +19,5 @@ public class Permission {
     private String permissionCode;
     private String permissionName;
     private String requiredPermission;
-
+    private String url;
 }

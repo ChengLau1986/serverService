@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
 
@@ -17,7 +19,11 @@ import javax.validation.constraints.NotNull;
 public class LoginVo {
 
     @NotNull
+//    @NotEmpty
+    @NotBlank
     private String username;
     @NotNull
+//    @NotEmpty
+    @NotBlank
     private String password;
 }

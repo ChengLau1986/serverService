@@ -5,7 +5,7 @@
 
     <select id="getUser" resultType="com.lzapi.pojo.User">
         SELECT
-            u.id,u.username,u.password ,u.nickname
+            u.username,u.password ,u.nickname
         FROM
             sys_user u
         WHERE u.username = #{username}

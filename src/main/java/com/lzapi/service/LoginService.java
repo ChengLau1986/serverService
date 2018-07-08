@@ -1,5 +1,6 @@
 package com.lzapi.service;
 
+import com.lzapi.common.Result;
 import com.lzapi.pojo.User;
 
 /**
@@ -8,4 +9,5 @@ import com.lzapi.pojo.User;
 public interface LoginService {
     boolean authLogin(String username,String password);
     User getUser(String username,String password);
+    Result<String> logout();
 }

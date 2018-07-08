@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lzapi.dao.PermissionDao" >
-
     <resultMap id="permissionMap" type="com.lzapi.pojo.User">
         <id column="id" property="userId"/>
         <result column="nickname" property="nickname"/>
@@ -20,7 +19,7 @@
         SELECT
         u.id,
         u.nickname,
-        ur.role_id role_id,
+        r.id role_id,
         r.role_name,
         p.id permission_id,
         p.menu_code,

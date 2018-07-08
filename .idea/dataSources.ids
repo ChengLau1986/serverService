@@ -24,174 +24,196 @@
         <comment>运营后台用户表</comment>
       </table>
       <table id="7" parent="1" name="sys_user_role"/>
-      <column id="8" parent="2" name="id">
+      <table id="8" parent="1" name="sys_shiro_filter"/>
+      <column id="9" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="9" parent="2" name="content">
+      <column id="10" parent="2" name="content">
         <comment>文章内容</comment>
         <data-type>varchar(255)</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="10" parent="2" name="create_time">
+      <column id="11" parent="2" name="create_time">
         <comment>创建时间</comment>
         <data-type>timestamp</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="11" parent="2" name="update_time">
+      <column id="12" parent="2" name="update_time">
         <comment>更新时间</comment>
         <data-type>timestamp</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="12" parent="2" name="delete_status">
+      <column id="13" parent="2" name="delete_status">
         <comment>是否有效  1.有效  2无效</comment>
         <data-type>varchar(1)</data-type>
         <default-expression>&apos;1&apos;</default-expression>
       </column>
-      <key id="13" parent="2" name="PRIMARY">
+      <key id="14" parent="2" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="14" parent="3" name="id">
+      <column id="15" parent="3" name="id">
         <comment>自定id,主要供前端展示权限列表分类排序使用.</comment>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="15" parent="3" name="menu_code">
+      <column id="16" parent="3" name="menu_code">
         <comment>归属菜单,前端判断并展示菜单使用,</comment>
         <data-type>varchar(255)</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="16" parent="3" name="menu_name">
+      <column id="17" parent="3" name="menu_name">
         <comment>菜单的中文释义</comment>
         <data-type>varchar(255)</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="17" parent="3" name="permission_code">
+      <column id="18" parent="3" name="permission_code">
         <comment>权限的代码/通配符,对应代码中@RequiresPermissions 的value</comment>
         <data-type>varchar(255)</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="18" parent="3" name="permission_name">
+      <column id="19" parent="3" name="permission_name">
         <comment>本权限的中文释义</comment>
         <data-type>varchar(255)</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="19" parent="3" name="required_permission">
+      <column id="20" parent="3" name="required_permission">
         <comment>是否本菜单必选权限, 1.必选 2非必选 通常是&quot;列表&quot;权限是必选</comment>
         <data-type>tinyint(1)</data-type>
         <default-expression>&apos;2&apos;</default-expression>
       </column>
-      <key id="20" parent="3" name="PRIMARY">
+      <column id="21" parent="3" name="url">
+        <comment>后台服务访问路径</comment>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <key id="22" parent="3" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="21" parent="4" name="id">
+      <column id="23" parent="4" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="22" parent="4" name="role_name">
+      <column id="24" parent="4" name="role_name">
         <comment>角色名</comment>
         <data-type>varchar(20)</data-type>
       </column>
-      <column id="23" parent="4" name="create_time">
+      <column id="25" parent="4" name="create_time">
         <data-type>timestamp</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="24" parent="4" name="update_time">
+      <column id="26" parent="4" name="update_time">
         <data-type>timestamp</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="25" parent="4" name="delete_status">
+      <column id="27" parent="4" name="delete_status">
         <comment>是否有效  1有效  2无效</comment>
         <data-type>varchar(1)</data-type>
         <default-expression>&apos;1&apos;</default-expression>
       </column>
-      <key id="26" parent="4" name="PRIMARY">
+      <key id="28" parent="4" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="27" parent="5" name="id">
+      <column id="29" parent="5" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="28" parent="5" name="role_id">
+      <column id="30" parent="5" name="role_id">
         <comment>角色id</comment>
         <data-type>int(11)</data-type>
       </column>
-      <column id="29" parent="5" name="permission_id">
+      <column id="31" parent="5" name="permission_id">
         <comment>权限id</comment>
         <data-type>int(11)</data-type>
       </column>
-      <column id="30" parent="5" name="create_time">
+      <column id="32" parent="5" name="create_time">
         <data-type>timestamp</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="31" parent="5" name="update_time">
+      <column id="33" parent="5" name="update_time">
         <data-type>timestamp</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="32" parent="5" name="delete_status">
+      <column id="34" parent="5" name="delete_status">
         <comment>是否有效 1有效     2无效</comment>
         <data-type>varchar(1)</data-type>
         <default-expression>&apos;1&apos;</default-expression>
       </column>
-      <key id="33" parent="5" name="PRIMARY">
+      <key id="35" parent="5" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="34" parent="6" name="id">
+      <column id="36" parent="6" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="35" parent="6" name="username">
+      <column id="37" parent="6" name="username">
         <comment>用户名</comment>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="36" parent="6" name="password">
+      <column id="38" parent="6" name="password">
         <comment>密码</comment>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="37" parent="6" name="nickname">
+      <column id="39" parent="6" name="nickname">
         <comment>昵称</comment>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="38" parent="6" name="role_id">
+      <column id="40" parent="6" name="role_id">
         <comment>角色ID</comment>
         <data-type>int(11)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="39" parent="6" name="create_time">
+      <column id="41" parent="6" name="create_time">
         <comment>创建时间</comment>
         <data-type>timestamp</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="40" parent="6" name="update_time">
+      <column id="42" parent="6" name="update_time">
         <comment>修改时间</comment>
         <data-type>timestamp</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="41" parent="6" name="delete_status">
+      <column id="43" parent="6" name="delete_status">
         <comment>是否有效  1有效  2无效</comment>
         <data-type>varchar(1)</data-type>
         <default-expression>&apos;1&apos;</default-expression>
       </column>
-      <key id="42" parent="6" name="PRIMARY">
+      <key id="44" parent="6" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="43" parent="7" name="id">
+      <column id="45" parent="7" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="44" parent="7" name="user_id">
+      <column id="46" parent="7" name="user_id">
         <data-type>int(11)</data-type>
       </column>
-      <column id="45" parent="7" name="role_id">
+      <column id="47" parent="7" name="role_id">
         <data-type>int(11)</data-type>
       </column>
-      <key id="46" parent="7" name="PRIMARY">
+      <key id="48" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="49" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="50" parent="8" name="name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="51" parent="8" name="perms">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="52" parent="8" name="sort_order">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="53" parent="8" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>

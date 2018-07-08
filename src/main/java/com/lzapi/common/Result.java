@@ -69,4 +69,8 @@ public class Result<T> implements Serializable{
         return  new Result<T>(msg.getCode(),msg.getMsg());
     }
 
+    public static <T> Result<T> Error(CodeMsg msg,T result){
+        return  new Result<T>(msg.getCode(),msg.getMsg(),result);
+    }
+
 }

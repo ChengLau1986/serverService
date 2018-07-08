@@ -30,6 +30,6 @@ public class logRecord {
 //        String mark = logDesc.businessLogic() + logDesc.actionType();
 //
 //        User user = (User) resultMsg.getResult();
-        log.info("测试拦截");
+        log.debug("测试拦截");
     }
 }
