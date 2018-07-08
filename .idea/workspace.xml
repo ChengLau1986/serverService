@@ -6,95 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3210070d-3d96-4687-86d5-61fe618ae49a" name="Default" comment="从数据库中读取权限配置">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.ids" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_4_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lzapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lzapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/cache/RedisCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/shiro/cache/RedisCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/cache/RedisCacheManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/shiro/cache/RedisCacheManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/common/CodeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/common/CodeMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/common/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/common/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/common/ExceptionResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/common/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/common/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/controller/common/AjaxPermissionsAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/controller/common/AjaxPermissionsAuthorizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/controller/common/aop/logRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/controller/common/aop/logRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/controller/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/controller/testLogback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/pojo/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/pojo/Permission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/service/impl/LoginImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/service/impl/LoginImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/session/CustomSessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/shiro/session/CustomSessionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/session/RedisSessionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/shiro/session/RedisSessionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/shiro/UserRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/shiro/UserRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/util/CookieUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/util/CookieUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lzapi/vo/LoginVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lzapi/vo/LoginVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/LoginMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/LoginMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/PermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/PermissionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-shiro.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springMVC.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/cache/RedisCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/cache/RedisCacheManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/common/CodeMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lzapi/common/CodeMsg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/common/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lzapi/common/Const.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/common/ExceptionResolver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/common/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lzapi/common/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lzapi/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/controller/common/AjaxPermissionsAuthorizationFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/controller/common/aop/logRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lzapi/controller/common/aop/logRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/controller/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/pojo/Permission.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lzapi/pojo/Permission.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lzapi/service/LoginService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/service/impl/LoginImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lzapi/service/impl/LoginImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/session/CustomSessionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/session/RedisSessionDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/shiro/UserRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lzapi/shiro/UserRealm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/util/CookieUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lzapi/util/CookieUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lzapi/vo/LoginVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lzapi/vo/LoginVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/LoginMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/LoginMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/PermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/PermissionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-shiro.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springMVC.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/cache/RedisCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/cache/RedisCacheManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/common/CodeMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/common/CodeMsg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/common/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/common/Const.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/common/ExceptionResolver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/common/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/common/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/controller/common/AjaxPermissionsAuthorizationFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/controller/common/aop/logRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/controller/common/aop/logRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/controller/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/pojo/Permission.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/pojo/Permission.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/service/LoginService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/service/impl/LoginImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/service/impl/LoginImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/session/CustomSessionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/session/RedisSessionDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/shiro/UserRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/shiro/UserRealm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/util/CookieUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/util/CookieUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/vo/LoginVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/com/lzapi/vo/LoginVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/mappers/LoginMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/mappers/LoginMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/mappers/PermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/mappers/PermissionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/spring-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/spring-shiro.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/lzapi/WEB-INF/classes/springMVC.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3210070d-3d96-4687-86d5-61fe618ae49a" name="Default" comment="从数据库中读取权限配置" />
     <ignored path="lzapi.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -152,11 +64,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testLogback.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="testLogback.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lzapi/controller/testLogback.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
               <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lzapi/controller/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="50" column="70" selection-start-line="50" selection-start-column="70" selection-end-line="50" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -983,7 +907,7 @@
       <workItem from="1530444359595" duration="61548000" />
       <workItem from="1530712297779" duration="494000" />
       <workItem from="1530962345213" duration="292000" />
-      <workItem from="1530962666056" duration="7428000" />
+      <workItem from="1530962666056" duration="8042000" />
     </task>
     <task id="LOCAL-00001" summary="从数据库中读取shiro的权限配置">
       <created>1531019175356</created>
@@ -1042,7 +966,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368709000" />
+    <option name="totallyTimeSpent" value="369323000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1055,7 +979,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1546" height="832" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.33351237" side_tool="true" weight="0.32839224" />
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32839224" />
@@ -1509,16 +1432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lzapi/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="50" column="70" selection-start-line="50" selection-start-column="70" selection-end-line="50" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lzapi/controller/common/AjaxPermissionsAuthorizationFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1560,6 +1473,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lzapi/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="50" column="70" selection-start-line="50" selection-start-column="70" selection-end-line="50" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
