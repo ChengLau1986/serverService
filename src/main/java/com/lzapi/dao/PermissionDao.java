@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * Created by lc on 2018/6/71.
+ * Created by lc on 2018/6/712.
  */
 public interface PermissionDao {
     User getUserPermission(@Param("username") String username);
